@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UPSSSC PET 2026 - Performance Scorecard</title>
+    <meta name="description" content="Detailed performance scorecard and review of your 95 MCQ UPSSSC PET Mock Examination.">
+    <link rel="stylesheet" href="resultstyle.css">
+    <script defer src="result.js"></script>
+</head>
+<body>
+    <!-- Confetti Canvas -->
+    <canvas id="confetti-canvas"></canvas>
+
+    <!-- App Header -->
+    <header style="padding: 1.25rem 2rem; border-bottom: 1px solid var(--border-subtle); display: flex; justify-content: space-between; align-items: center; background: rgba(11, 15, 25, 0.7); backdrop-filter: blur(12px);">
+        <a href="index.html" style="display: flex; align-items: center; gap: 0.75rem; text-decoration: none; color: inherit;">
+            <div style="width: 36px; height: 36px; background: var(--btn-gradient); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; box-shadow: 0 0 15px var(--primary-glow);">⚡</div>
+            <div style="font-size: 1.3rem; font-weight: 800; background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">UPSSSC PET 2026</div>
+        </a>
+        <div style="font-size: 0.82rem; font-weight: 600; padding: 0.25rem 0.75rem; background: rgba(99, 102, 241, 0.15); border: 1px solid rgba(99, 102, 241, 0.3); border-radius: 9999px; color: var(--primary-light);">
+            Official Scorecard (2-Hour Mock)
+        </div>
+    </header>
+
+    <!-- Results Wrapper -->
+    <main class="result-wrapper">
+        <!-- Hero Score Card with Circular SVG Gauge -->
+        <section class="hero-score-card">
+            <div class="verdict-badge" id="verdict-badge">
+                Evaluating Results...
+            </div>
+
+            <div class="gauge-container">
+                <svg class="gauge-svg" viewBox="0 0 160 160">
+                    <defs>
+                        <linearGradient id="scoreGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#6366f1" />
+                            <stop offset="50%" stop-color="#8b5cf6" />
+                            <stop offset="100%" stop-color="#10b981" />
+                        </linearGradient>
+                    </defs>
+                    <circle class="gauge-bg" cx="80" cy="80" r="70" />
+                    <circle class="gauge-progress" id="gauge-progress-circle" cx="80" cy="80" r="70" />
+                </svg>
+                <div class="gauge-inner-text">
+                    <div class="gauge-percent" id="gauge-percent">0%</div>
+                    <div class="gauge-subtext">OVERALL SCORE</div>
+                </div>
+            </div>
+
+            <h1 class="score-headline" id="score-headline">0 / 95 Correct</h1>
+            <p class="score-subheadline" id="score-subheadline">
+                Detailed results calculated from your latest attempt.
+            </p>
+        </section>
+
+        <!-- Stats 4-Card Grid -->
+        <section class="stats-grid">
+            <div class="stat-card correct">
+                <div class="stat-icon-wrapper">✓</div>
+                <div class="stat-info">
+                    <div class="stat-value" id="stat-correct-val">0</div>
+                    <div class="stat-label">Correct Answers</div>
+                </div>
+            </div>
+
+            <div class="stat-card wrong">
+                <div class="stat-icon-wrapper">✕</div>
+                <div class="stat-info">
+                    <div class="stat-value" id="stat-wrong-val">0</div>
+                    <div class="stat-label">Incorrect Answers</div>
+                </div>
+            </div>
+
+            <div class="stat-card skipped">
+                <div class="stat-icon-wrapper">⊘</div>
+                <div class="stat-info">
+                    <div class="stat-value" id="stat-skipped-val">0</div>
+                    <div class="stat-label">Skipped / Left</div>
+                </div>
+            </div>
+
+            <div class="stat-card accuracy">
+                <div class="stat-icon-wrapper">🎯</div>
+                <div class="stat-info">
+                    <div class="stat-value" id="stat-accuracy-val">0%</div>
+                    <div class="stat-label">Attempt Accuracy</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Action Controls Bar -->
+        <section class="action-controls-bar">
+            <button type="button" id="btn-retake" class="action-btn primary">
+                <span>🔄 Retake Full Quiz</span>
+            </button>
+            <button type="button" id="btn-practice-missed" class="action-btn special" style="display: none;">
+                <span>🎯 Practice Missed Questions</span>
+            </button>
+            <button type="button" id="btn-print" class="action-btn secondary">
+                <span>🖨️ Print Scorecard</span>
+            </button>
+            <button type="button" id="btn-home" class="action-btn secondary">
+                <span>🏠 Return Home</span>
+            </button>
+        </section>
+
+        <!-- Question-by-Question Detailed Review -->
+        <section class="review-section">
+            <div class="review-header">
+                <div class="review-title">Detailed Question Review</div>
+                <div class="filter-tabs">
+                    <button type="button" class="filter-btn active" data-filter="all" id="tab-all">All</button>
+                    <button type="button" class="filter-btn" data-filter="wrong" id="tab-wrong">Incorrect</button>
+                    <button type="button" class="filter-btn" data-filter="correct" id="tab-correct">Correct</button>
+                    <button type="button" class="filter-btn" data-filter="skipped" id="tab-skipped">Skipped</button>
+                </div>
+            </div>
+
+            <!-- List of review cards -->
+            <div class="review-cards-list" id="review-cards-list">
+                <!-- Dynamically populated review cards -->
+            </div>
+        </section>
+    </main>
+</body>
+</html>

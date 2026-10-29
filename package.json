@@ -1,0 +1,11 @@
+{
+  "name": "quiz-quest-80-mcq",
+  "version": "1.0.0",
+  "description": "80-MCQ Quiz Web Application powered by mcq_80_questions.csv",
+  "scripts": {
+    "start": "npx serve ."
+  },
+  "keywords": ["quiz", "mcq", "education", "quiz-quest"],
+  "author": "Krishna Maurya",
+  "license": "MIT"
+}

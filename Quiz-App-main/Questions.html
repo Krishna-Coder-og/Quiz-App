@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UPSSSC PET 2026 - Master Mock Examination Session (2 Hours Fixed)</title>
+    <meta name="description" content="Interactive examination session for UPSSSC PET 2026 Master Mock Test with 95 MCQs and 2 Hours Locked Timer.">
+    <link rel="stylesheet" href="quizstyle.css">
+    <!-- Preload dataset -->
+    <script src="defaultQuestions.js"></script>
+    <script defer src="script1.js"></script>
+</head>
+<body>
+    <!-- Sticky Top Navigation Bar -->
+    <header class="quiz-topbar">
+        <!-- Brand & Mode -->
+        <div class="quiz-brand">
+            <a href="index.html" class="quiz-logo-badge" style="text-decoration:none;" title="Return to Setup">⚡</a>
+            <div class="quiz-title">
+                <span>UPSSSC PET 2026</span>
+                <span id="quiz-mode-badge" class="mode-badge-pill">Exam (95 Qs)</span>
+            </div>
+        </div>
+
+        <!-- Progress Tracker -->
+        <div class="topbar-center">
+            <div class="progress-labels">
+                <span id="progress-question-text">Question 1 of 95</span>
+                <span id="progress-percentage-text">1% Completed</span>
+            </div>
+            <div class="progress-track">
+                <div class="progress-fill" id="progress-bar-fill"></div>
+            </div>
+        </div>
+
+        <!-- Timer & Top Controls -->
+        <div class="topbar-right">
+            <div class="timer-box" id="timer-box" title="Remaining time (Strict 2 Hours)">
+                <span id="timer-icon">⏳</span>
+                <span id="timer-display">02:00:00</span>
+                <span class="timer-locked-icon" title="Fixed 2-Hour Time Limit">🔒</span>
+            </div>
+            <button type="button" id="toggle-matrix-btn" class="btn-drawer-toggle" aria-label="Toggle Question Navigator">
+                <span>📑</span>
+                <span id="nav-btn-text">Grid</span>
+            </button>
+            <button type="button" id="finish-quiz-btn" class="btn-finish-quiz">
+                Submit Exam
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="quiz-layout">
+        <!-- Question Main Column -->
+        <section class="quiz-main-content">
+            <!-- Active Question Card -->
+            <article class="question-card" id="question-card">
+                <!-- Card Top Info -->
+                <div class="card-top">
+                    <div style="display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap;">
+                        <div class="question-badge" id="question-pill">
+                            <span>Question</span>
+                            <strong id="current-q-num">1</strong>
+                            <span style="opacity: 0.6;">/</span>
+                            <span id="total-q-num">95</span>
+                        </div>
+                        <div id="question-section-pill" class="section-badge">
+                            Indian History
+                        </div>
+                    </div>
+                    <button type="button" class="review-toggle-btn" id="mark-review-btn">
+                        <span id="review-star-icon">☆</span>
+                        <span id="review-text">Mark for Review</span>
+                    </button>
+                </div>
+
+                <!-- DI / Stimulus Reference Container (Visible for DI & Reading Comprehension questions) -->
+                <div id="stimulus-container" class="stimulus-container" style="display: none;">
+                    <!-- Dynamically populated with Data Interpretation tables/graphs or passages -->
+                </div>
+
+                <!-- Question Text -->
+                <div class="question-text" id="question-text">
+                    Loading question...
+                </div>
+
+                <!-- 4 Option Cards -->
+                <div class="options-list" id="options-container">
+                    <!-- Dynamically populated options A, B, C, D -->
+                </div>
+
+                <!-- Practice Mode Feedback Banner (Hidden by default) -->
+                <div id="practice-feedback" class="practice-feedback-banner" style="display: none;">
+                    <!-- Feedback message -->
+                </div>
+            </article>
+
+            <!-- Bottom Question Controls Bar -->
+            <div class="quiz-controls-bar">
+                <div class="controls-left">
+                    <button type="button" id="prev-btn" class="btn-ctrl" disabled>
+                        <span>←</span>
+                        <span>Previous</span>
+                    </button>
+                    <button type="button" id="clear-btn" class="btn-ctrl btn-ctrl-clear">
+                        <span>Clear Selection</span>
+                    </button>
+                </div>
+
+                <div class="controls-right">
+                    <button type="button" id="practice-check-btn" class="btn-ctrl" style="display: none; border-color: var(--primary);">
+                        <span>Check Answer</span>
+                    </button>
+                    <button type="button" id="next-btn" class="btn-ctrl btn-ctrl-primary">
+                        <span id="next-btn-text">Next Question</span>
+                        <span>→</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Keyboard shortcuts help footer -->
+            <div class="shortcuts-legend">
+                <span>⚡ <strong>Shortcuts:</strong> <code>A</code> <code>B</code> <code>C</code> <code>D</code> select option • <code>←</code> <code>→</code> navigate • <code>M</code> mark for review • <code>Ctrl+Enter</code> submit</span>
+            </div>
+        </section>
+
+        <!-- Right Question Navigator Sidebar -->
+        <aside class="quiz-matrix-sidebar" id="matrix-sidebar">
+            <div class="sidebar-header">
+                <h3>Question Navigator</h3>
+                <div class="matrix-stats-mini">
+                    <span class="stat-mini answered" id="stat-answered">0 Ans</span>
+                    <span class="stat-mini review" id="stat-review">0 Rev</span>
+                    <span class="stat-mini skipped" id="stat-skipped">95 Left</span>
+                </div>
+            </div>
+
+            <!-- Legend -->
+            <div class="matrix-legend">
+                <div class="legend-item"><span class="legend-dot current"></span> Current</div>
+                <div class="legend-item"><span class="legend-dot answered"></span> Answered</div>
+                <div class="legend-item"><span class="legend-dot review"></span> Review</div>
+                <div class="legend-item"><span class="legend-dot unvisited"></span> Unvisited</div>
+            </div>
+
+            <!-- Grid of Question Buttons -->
+            <div class="matrix-grid-scroll" id="matrix-grid">
+                <!-- Dynamically generated question cells 1 to 95 -->
+            </div>
+        </aside>
+    </main>
+
+    <!-- Submit Confirmation Modal -->
+    <div class="modal-backdrop" id="confirm-modal">
+        <div class="modal-box">
+            <div class="modal-icon">⚠️</div>
+            <h3 class="modal-title">Ready to Submit Your Exam?</h3>
+            <p class="modal-desc">Review your progress below before finalizing your submission. Once submitted, your score will be calculated immediately.</p>
+            
+            <div class="modal-stats-summary">
+                <div class="modal-stat-pill">
+                    <strong id="modal-answered-count">0</strong>
+                    <span>Answered</span>
+                </div>
+                <div class="modal-stat-pill">
+                    <strong id="modal-review-count">0</strong>
+                    <span>Marked Review</span>
+                </div>
+                <div class="modal-stat-pill">
+                    <strong id="modal-unanswered-count">95</strong>
+                    <span>Unanswered</span>
+                </div>
+            </div>
+
+            <div class="modal-actions">
+                <button type="button" class="btn-modal-cancel" id="modal-cancel-btn">
+                    Continue Exam
+                </button>
+                <button type="button" class="btn-modal-confirm" id="modal-confirm-btn">
+                    Submit Exam & View Results
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

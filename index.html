@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UPSSSC PET 2026 - Master Mock Test (95 MCQs • 2-Hour Exam)</title>
+    <meta name="description" content="Interactive 95 Multiple Choice Question UPSSSC PET Mock Examination featuring History, Polity, Geography, Economy, Science, Hindi, English, Reasoning, and Data Interpretation.">
+    <link rel="stylesheet" href="style.css">
+    <!-- Preload questions from defaultQuestions.js -->
+    <script src="defaultQuestions.js"></script>
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <!-- Top Header -->
+    <header class="app-header">
+        <a href="index.html" class="brand-wrapper" id="brand-logo-link">
+            <div class="brand-icon">⚡</div>
+            <div class="brand-title">UPSSSC PET 2026</div>
+        </a>
+        <div class="brand-badge" id="source-badge">
+            <span id="badge-file-name">mock_quiz.pdf</span> (95 Loaded)
+        </div>
+    </header>
+
+    <!-- Main Wrapper -->
+    <main class="main-wrapper">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-pill">
+                <span class="pulse-dot"></span>
+                <span>UPSSSC PET 2026 Mock Test • 95 Questions • 2 Hours</span>
+            </div>
+            <h1 class="hero-title">
+                Master Your Exam with <br>
+                <span class="gradient-text">The 95-MCQ Master Mock Test</span>
+            </h1>
+            <p class="hero-subtitle">
+                Comprehensive mock test covering Indian History, National Movement, Geography, Economy, Constitution, General Science, Arithmetic, Hindi, English, Reasoning, Current Affairs, and Data Interpretation (DI Tables & Graphs).
+            </p>
+        </section>
+
+        <!-- Interactive Setup Glass Card -->
+        <div class="glass-card">
+            <!-- Mode Selection -->
+            <div class="config-label">
+                <span>🎯</span> Choose Exam Mode
+            </div>
+            <div class="mode-selector" id="mode-selector-group">
+                <label class="mode-option active" id="mode-opt-full">
+                    <input type="radio" name="quizMode" value="full" checked>
+                    <div class="mode-radio-custom"></div>
+                    <div class="mode-text">
+                        <div class="mode-name">
+                            <span>Full Mock Exam (95 Questions)</span>
+                            <span class="brand-badge">Comprehensive</span>
+                        </div>
+                        <div class="mode-desc">Complete all 95 questions under strict 2-hour exam rules with full question matrix, DI tables, review flags, and detailed analytics.</div>
+                    </div>
+                </label>
+
+                <label class="mode-option" id="mode-opt-sprint">
+                    <input type="radio" name="quizMode" value="sprint">
+                    <div class="mode-radio-custom"></div>
+                    <div class="mode-text">
+                        <div class="mode-name">
+                            <span>Speed Sprint (25 Questions)</span>
+                            <span class="brand-badge">Quick Test</span>
+                        </div>
+                        <div class="mode-desc">A rapid 25-question cross-sectional sample for targeted quick practice.</div>
+                    </div>
+                </label>
+
+                <label class="mode-option" id="mode-opt-practice">
+                    <input type="radio" name="quizMode" value="practice">
+                    <div class="mode-radio-custom"></div>
+                    <div class="mode-text">
+                        <div class="mode-name">
+                            <span>Practice Mode (Instant Feedback)</span>
+                            <span class="brand-badge">Learn as You Go</span>
+                        </div>
+                        <div class="mode-desc">Learn as you go with instant answer verification and explanations on every selection.</div>
+                    </div>
+                </label>
+            </div>
+
+            <!-- Quiz Settings Grid -->
+            <div class="config-grid">
+                <!-- Strict 2-Hour Locked Time Limit (No Option to Change) -->
+                <div class="config-box locked-box">
+                    <div class="config-label">
+                        <span>⏱️</span> Time Limit <span class="badge-locked">🔒 Fixed</span>
+                    </div>
+                    <div class="fixed-timer-display">
+                        <span class="timer-main-val">2 Hours</span>
+                        <span class="timer-sub-val">(120 Minutes Strictly Enforced)</span>
+                    </div>
+                    <div class="config-hint">Exam standard duration is strictly locked. No option to alter the 2-hour time limit.</div>
+                </div>
+
+                <!-- Question Order & Options -->
+                <div class="config-box">
+                    <div class="config-label">
+                        <span>🔀</span> Question Ordering
+                    </div>
+                    <div class="toggle-item">
+                        <span style="font-size: 0.95rem; font-weight: 500;">Randomize / Shuffle Order</span>
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="shuffle-toggle">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Preloaded PDF / Data Source Card -->
+            <div class="upload-card" id="drop-zone">
+                <div class="upload-icon">📄</div>
+                <div class="upload-text" id="upload-status-text">Using preloaded "mock_quiz.pdf"</div>
+                <div class="upload-hint">Loaded 95 verified questions including Data Interpretation & Reading Passages. Drag & drop any custom CSV here if needed.</div>
+                <input type="file" id="csvFile" class="file-input-hidden" accept=".csv" aria-label="Upload custom CSV">
+                <div id="loaded-info-badge" class="loaded-badge">
+                    ✓ 95 Verified Questions Ready (with DI Tables & Graphs)
+                </div>
+            </div>
+
+            <!-- CTA Actions -->
+            <div class="cta-group">
+                <button type="button" id="start-btn" class="btn-primary">
+                    <span>Start 2-Hour Exam Now</span>
+                    <span style="font-size: 1.2rem;">→</span>
+                </button>
+                <button type="button" id="preview-btn" class="btn-secondary">
+                    <span>Preview Question Bank (95)</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Features Showcase -->
+        <section class="features-grid">
+            <div class="feature-pill">
+                <div class="feature-icon">📊</div>
+                <div class="feature-text">
+                    <h4>Data Interpretation (DI) Ready</h4>
+                    <p>Reference tables and charts are always visible alongside each question in DI sets.</p>
+                </div>
+            </div>
+            <div class="feature-pill">
+                <div class="feature-icon">🧭</div>
+                <div class="feature-text">
+                    <h4>95-Question Navigator Matrix</h4>
+                    <p>Jump to any question instantly with interactive color-coded status badges.</p>
+                </div>
+            </div>
+            <div class="feature-pill">
+                <div class="feature-icon">⏱️</div>
+                <div class="feature-text">
+                    <h4>Strict 2-Hour Timer</h4>
+                    <p>Accurate countdown with low-time warning and automatic submission upon expiry.</p>
+                </div>
+            </div>
+            <div class="feature-pill">
+                <div class="feature-icon">📈</div>
+                <div class="feature-text">
+                    <h4>Performance Analytics</h4>
+                    <p>Detailed score breakdown, accuracy rates, and question-by-question review.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+        <p>UPSSSC PET 2026 Master Mock Test • Powered by <code>mock_quiz.pdf</code> • 2 Hours Fixed Exam</p>
+    </footer>
+</body>
+</html>
